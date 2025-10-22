@@ -1,0 +1,2051 @@
+/* =====================================================
+   Estilos para Inicio Sesion
+   Archivo original: inicio_sesion.php
+===================================================== */
+.footer-seguridad {
+  color: white;
+  font-size: 0.85em;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.3); /* opcional */
+  border-radius: 5px;
+}
+
+
+/* Estilos para inicio_sesion.php */
+
+.formulario-inicio-sesion {
+  background-color: var(--color-gris-claro);
+    padding: 20px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+
+transition: all 0.3s ease;
+}
+
+.recordarme-container {
+  display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+/* 🎯 Botones de navegación */
+.navegacion-botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.boton-navegacion {
+    background-color: var(--boton-bg, #007bff);
+    color: var(--boton-color, #fff);
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-navegacion:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.boton-navegacion:active {
+    transform: translateY(1px);
+    background-color: #004494;
+}
+
+.boton-navegacion:focus {
+    outline: 3px solid #ffaa00;
+}
+
+/* 🔢 Indicador opcional de página actual */
+.navegacion-botones::before {
+    content: " ";
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--texto-contraste, #333);
+}
+
+/* 🌞 Modo claro */
+@media (prefers-color-scheme: light) {
+    :root {
+        --boton-bg: #007bff;
+        --boton-color: #ffffff;
+        --texto-contraste: #212529;
+    }
+}
+
+/* 🌙 Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --boton-bg: #1a73e8;
+        --boton-color: #e0e0e0;
+        --texto-contraste: #f1f1f1;
+    }
+}
+
+/* 📱 Mobile (hasta 480px) */
+@media (max-width: 480px) {
+    .boton-navegacion {
+        display: block;
+        width: 90%;
+        margin: 0.5em auto;
+        font-size: 0.95rem;
+        padding: 0.5em 1em;
+        text-align: center;
+    }
+
+    .navegacion-botones {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 📱 Tablet (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .boton-navegacion {
+        font-size: 1rem;
+        padding: 0.6em 1.2em;
+    }
+}
+
+/* 💻 Laptop (769px a 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .boton-navegacion {
+        font-size: 1.1rem;
+        padding: 0.7em 1.5em;
+    }
+}
+
+/* 🖥️ Desktop (> 1200px) */
+@media (min-width: 1201px) {
+    .boton-navegacion {
+        font-size: 1.2rem;
+        padding: 0.8em 2em;
+    }
+}
+.indicador-pagina {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-texto, #333);
+  margin-top: 1rem;
+  margin-bottom: -1.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: var(--radio-borde, 8px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .indicador-pagina {
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Tablet (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .indicador-pagina {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptop (769px–1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .indicador-pagina {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop (>1200px) */
+@media (min-width: 1201px) {
+  .indicador-pagina {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* =====================================================
+   Estilos para Galeria
+   Archivo original: galeria.php
+===================================================== */
+
+/* Estilos para galeria.php */
+
+.foto-item {
+  width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-gris-claro);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+transition: all 0.3s ease;
+}
+
+li {
+  background-color: rgba(255, 255, 255, 0.85); /* blanco visible pero suave */
+        border: 1px solid var(--color-borde);
+        border-radius: var(--radio-borde);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        text-align: center;
+        max-width: 450px;
+        width: 100%;
+        backdrop-filter: blur(4px); /* extra: fondo elegante */
+}
+
+/* Eliminar el grid general aplicado a ul que puede causar problemas */
+ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* =====================================================
+   Estilos para Ver Foto
+   Archivo original: ver_foto.php
+===================================================== */
+
+/* Estilos para ver_foto.php */
+
+.foto-detalle {
+  height: auto;
+    margin-bottom: var(--gap-secciones); 
+    width: 800px; /* Aumenta el tamaño según lo necesites */
+    max-width: 100%;
+}
+
+/* =====================================================
+   Estilos para Comun
+   Archivo original: comun.php
+===================================================== */
+
+/* Estilos para comun.php */
+
+/* Definir las variables globales */
+:root {
+  /* Colores principales */
+    --color-primario: #d48c9e; /* rosa suave */
+    --color-secundario: #f8e8c1; /* dorado pastel */
+    --color-hover-secundario: #f6d28f;
+    --color-terciario: #b88c9e;
+    --color-fondo: #e4d4c5;
+    --color-texto: #5c4b51;
+
+    /* Tamaños */
+    --font-size-pequeno: 0.875rem;
+    --font-size-normal: 1rem;
+    --font-size-header: 1.25rem;
+    --font-size-footer: 12px;
+    --font-size-tabla: 16px;
+
+    /* Espaciado y Padding */
+    --padding-boton: 8px 12px;
+    --padding-formulario: 15px;
+    --margin-formulario: 15px;
+    --borde-boton: 2px;
+    --gap-secciones: 15px;
+
+    /* Bordes y Sombra */
+    --radio-borde: 5px;
+    --sombra: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo general para el cuerpo de la página */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+ 
+  background-color: var(--color-fondo); /* Aplica el fondo beige global */
+  color: var(--color-texto);
+
+
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.boton-volver {
+  background-color: var(--color-secundario); 
+    border: var(--borde-boton) solid var(--color-hover-secundario); 
+    border-radius: var(--radio-borde); 
+    color: var(--color-texto); 
+    display: inline-block; 
+    cursor: pointer; 
+    font-size: var(--font-size-pequeno); 
+    padding: var(--padding-boton); 
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: var(--gap-secciones);
+}
+
+.boton-volver:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+.boton-volver:focus {
+  outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario);
+}
+
+/* Hacer que el main ocupe todo el espacio disponible */
+main {
+  flex: 1;
+}
+
+/* Estilo del encabezado */
+header {
+  position: relative;
+    background: url('../image/nieve2.jpg') no-repeat;
+    background-size: cover;
+    background-position: 50% 30%; /* mueve el foco vertical */
+    color: var(--color-blanco);
+    padding: var(--padding-formulario);
+    display: flex;
+    flex-direction: column; /* cambia a columnas verticales */
+    align-items: center;    /* centra horizontalmente */
+    justify-content: center; /* centra verticalmente si das altura */
+    text-align: center;
+    font-size: var(--font-size-header);
+    
+}
+
+header h1, header h3, header p {
+  display:inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    box-shadow: 0 80px 120px rgba(0, 0, 0, 0.9); /* sombra negra muy marcada */
+}
+
+/* Estilo para el menú de navegación */
+/* Ajuste específico para header/nav */
+/* === Estilos base mobile-first === */
+
+/* Botón de hamburguesa */
+.menu-toggle {
+  display: none; /* Oculta el botón hamburguesa */
+}
+
+/* Ocultar el menú por defecto en móviles */
+.menu-principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 0;
+}
+
+
+
+/* Animación de aparición suave del menú */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos de enlaces del menú móvil (hereda de nav ul a) */
+
+/* === Media Queries === */
+
+/* Tablets y pantallas medianas en adelante */
+/* =============================
+   📱 MÓVILES y TABLETS (<800px)
+============================= */
+@media (max-width: 799px) {
+  .menu-toggle {
+    display: block; /* Mostrar botón hamburguesa */
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    z-index: 1000;
+  }
+
+  .menu-principal {
+    display: none; /* Ocultar menú horizontal */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .menu-principal.activo {
+    display: flex; /* Mostrar al hacer clic */
+    animation: fadeInMenu 0.4s ease-in-out;
+  }
+}
+
+
+
+nav ul a {
+  background-color: var(--color-secundario); 
+    border: var(--borde-boton) solid var(--color-hover-secundario); 
+    border-radius: var(--radio-borde); 
+    color: var(--color-texto); 
+    cursor: pointer; 
+    display: inline-block; 
+    font-size: var(--font-size-normal);
+    padding: var(--padding-boton);
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav ul a:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+nav ul a:focus {
+  outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario);
+}
+
+/* Estilo para los botones */
+button {
+  background-color: var(--color-secundario); 
+    border: var(--borde-boton) solid var(--color-hover-secundario); 
+    border-radius: var(--radio-borde); 
+    color: var(--color-texto); 
+    display: inline-block; 
+    cursor: pointer; 
+    font-size: var(--font-size-pequeno); 
+    padding: var(--padding-boton); 
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: var(--gap-secciones);
+}
+
+button:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+button:focus {
+  outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario);
+}
+
+/* Estilo específico para el botón de la tabla */
+
+
+.boton-tabla:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+.boton-tabla:focus {
+  outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario);
+}
+
+/* Clase específica para la sección de la izquierda (donde está la tabla) */
+
+
+/* Ajustar el tamaño de la tabla dentro de la sección izquierda */
+.section-izquierda 
+
+/* Estilo para centrar toda la sección de coste del álbum */
+.coste-album-seccion, 
+
+.coste-album-contenedor p {
+  font-size: var(--font-size-tabla); 
+    margin: 0;
+}
+
+/* Estilo para alinear la imagen y los detalles de la foto */
+.detalle-foto-contenedor {
+  display: flex;
+    margin: 30px;
+    align-items: center;
+    gap: var(--gap-secciones); 
+    justify-content: center;
+}
+
+.listado-albumes li {
+  border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.listado-albumes h3 {
+  margin: 0;
+    font-size: 1.2em;
+}
+
+.listado-albumes p {
+  margin: 5px 0;
+    color: #666;
+}
+
+.listado-albumes a {
+  display: inline-block;
+    margin-top: 10px;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.listado-albumes a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para centrar solo el formulario de búsqueda */
+.formulario-busqueda {
+  align-items: center;
+    background-color: var(--color-gris-claro);
+    border: 1px solid var(--color-borde); 
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: var(--margin-formulario) auto;
+    padding: var(--padding-formulario); 
+    width: 45%;
+}
+
+/* Ajuste del textarea para que se mantenga dentro del contenedor */
+form textarea {
+  resize: vertical; /* Permite solo la redimensión vertical */
+    width: 100%; /* Asegura que el textarea ocupe el 100% del contenedor */
+    max-width: 100%; /* Evita desbordes */
+}
+
+form.buscador-rapido input[type="text"] {
+  width: 200px !important; /* Aumenta el tamaño a lo que necesites */
+    padding: 12px 20px !important; /* Aumenta el padding para que se vea más grande */
+    font-size: var(--font-size-normal) !important; /* Ajusta el tamaño de la fuente */
+    border: 1px solid var(--color-borde); /* Asegura que haya un borde visible */
+    border-radius: var(--radio-borde); /* Añade bordes redondeados */
+}
+
+/* =========================================
+ Estilos para el Footer
+ Archivo común: footer.php
+========================================= */
+
+footer {
+  background: url(../image/nieve2.jpg);
+  background-position: 50% 30%;
+  background-size: cover;
+  color: var(--color-blanco);
+  padding: var(--padding-formulario);
+  text-align: center;
+ width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  bottom: 0;
+}
+
+/* Estilo del texto del footer */
+footer p {
+  font-size: var(--font-size-footer);
+  margin: 5px auto 12px;
+  color: white;
+  text-shadow: 
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     2px 2px 6px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  
+  /* NUEVO: recuadro suave */
+  background-color: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radio-borde);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Recuadro de contacto */
+.contacto-footer a {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #d44638; /* color tipo Gmail */
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contacto-footer a:hover {
+  background-color: #b4342d;
+}
+
+.contacto-footer i {
+  margin-right: 8px;
+}
+
+
+
+/* Galería de fotos */
+.fotos-lista {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.foto-item img {
+  width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+ul{
+/* Para que los elementos en el <ul> estén en la misma línea */
+  display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ← también aquí si es necesario */
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    justify-items: center;
+}
+
+/* Centrar solo la última imagen */
+/* ul li:last-child {
+  grid-column: 1 / -1;
+    justify-self: center;
+}
+
+*/
+
+img {
+  width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.photo-details {
+  text-align: left;
+}
+
+/* Estilo para la sección principal */
+section {
+  background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: var(--padding-formulario);
+    
+}
+section, header, footer, main, .contenedor-volver {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+main {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Estilo específico para centrar el formulario de inicio de sesión */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;  /* Centrado vertical */
+  padding: 40px 20px;
+  background-color: transparent; /* o el color de fondo global si lo prefieres */
+}
+
+
+/* Asegura que los elementos en formulario-registro estén en columnas */
+.formulario-registro {
+  display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los elementos del formulario */
+    width: 50%; /* Puedes ajustar el ancho según lo que necesites */
+    margin: 0 auto; /* Centra el formulario en la página */
+}
+
+.formulario-registro label,
+.formulario-registro input,
+.formulario-registro select,
+.formulario-registro button {
+  width: 100%;
+    box-sizing: border-box;
+}
+
+/* Asegura que el botón esté centrado y tenga el mismo estilo */
+.formulario-registro button {
+  align-self: center;
+    max-width: 200px; /* Ajusta el ancho del botón si es necesario */
+}
+
+/* Centrar los campos de nombre de usuario y contraseña */
+.formulario-inicio-sesion label,
+.formulario-inicio-sesion input {
+  display: block;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.formulario-inicio-sesion input {
+  padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para el botón de inicio de sesión */
+.formulario-inicio-sesion button {
+  width: 100%; 
+    background-color: var(--color-secundario);
+    border: var(--borde-boton) solid var(--color-hover-secundario);
+    border-radius: var(--radio-borde);
+    color: var(--color-texto);
+    cursor: pointer;
+    font-size: var(--font-size-pequeno);
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 10px; /* Reduce el margen superior si es necesario */
+    margin-bottom: 0; /* Asegúrate de no tener margen inferior para evitar que se salga */
+}
+
+.formulario-inicio-sesion button:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+.error {
+  color: red;
+    font-size: 0.9rem;
+}
+
+.recordarme-container input[type="checkbox"] {
+  margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.recordarme-container label {
+  line-height: 16px; /* Alinea el texto con la altura del checkbox */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =====================================================
+ Estilos para Mis Álbumes
+ Archivo original: mis_albumes.php
+===================================================== */
+
+/* Recuadro bonito para el título principal */
+section > h2 {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 15px 25px;
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--color-texto);
+}
+
+/* Nueva rejilla fija para 5 álbumes (3 arriba, 2 abajo) */
+.lista-albumes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: start;
+  gap: 40px 30px;
+  padding: 20px 10px;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Estilo individual de cada álbum */
+.item-album {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+ 
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-album:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen más consistente */
+.item-album img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.item-album h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-texto);
+}
+
+
+
+.item-album p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 10px 0;
+}
+
+.item-album a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  text-decoration: none;
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: var(--radio-borde);
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.item-album a:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+.imagen-portada {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-portada.grande {
+  width: 200px;
+  height: auto;
+}
+
+
+/* =====================================================
+ Estilos para Página Principal
+ Archivo original: pagina_principal.php
+===================================================== */
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 25px;
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  color: var(--color-texto);
+}
+
+.galeria-principal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 40px;
+  padding: 40px;
+  justify-items: center;
+  list-style: none;
+  margin: 0 auto;
+}
+.foto-item{
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radio-borde);
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+transition: all 0.3s ease;
+}
+
+.foto-item:hover {
+  transform: scale(1.02);
+
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-principal {
+  width: 100%;
+  height: 500px; /* Más altura todavía */
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================================
+ Estilos para Crear Álbum
+ Archivo original: crear_album.php
+===================================================== */
+
+.crear-album-contenedor {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+transition: all 0.3s ease;
+}
+
+.crear-album-contenedor h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: var(--color-texto);
+}
+
+.crear-album-contenedor form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.crear-album-contenedor label {
+  font-weight: bold;
+  color: var(--color-texto);
+}
+
+.crear-album-contenedor input[type="text"],
+.crear-album-contenedor textarea,
+.crear-album-contenedor input[type="file"] {
+  padding: 10px;
+  font-size: var(--font-size-normal);
+  border: 1px solid var(--color-hover-secundario);
+  border-radius: var(--radio-borde);
+  background-color: #fff5f5;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.crear-album-contenedor input[type="text"]:focus,
+.crear-album-contenedor textarea:focus,
+.crear-album-contenedor input[type="file"]:focus {
+  outline: none;
+  border-color: var(--color-terciario);
+}
+
+.crear-album-contenedor button {
+  align-self: center;
+  max-width: 200px;
+}
+
+.mis-datos-contenedor {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 800px; /* antes 600px */
+  width: 90%;       /* ocupa más en pantallas grandes */
+  margin: 50px auto;
+  padding: 40px;    /* más espacio interior */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mis-datos-contenedor h2 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: var(--color-texto);
+}
+
+.mis-datos-contenedor form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mis-datos-contenedor label {
+  font-weight: bold;
+  color: var(--color-texto);
+  font-size: var(--font-size-normal);
+}
+
+.mis-datos-contenedor input[type="text"],
+.mis-datos-contenedor input[type="email"],
+.mis-datos-contenedor input[type="password"],
+.mis-datos-contenedor input[type="file"] {
+  padding: 12px;
+  font-size: var(--font-size-normal);
+  border: 1px solid var(--color-hover-secundario);
+  border-radius: var(--radio-borde);
+  background-color: #fff5f5;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.mis-datos-contenedor input:focus {
+  outline: none;
+  border-color: var(--color-terciario);
+}
+
+.mis-datos-contenedor button {
+  align-self: center;
+  max-width: 220px;
+  padding: 10px 20px;
+  font-size: var(--font-size-normal);
+}
+
+
+/* =====================================================
+ Estilos para Álbum Privado
+ Archivo original: album_privada.php
+===================================================== */
+
+.album-privado-info {
+width: 80%; /* Aumenta el ancho del recuadro blanco */
+max-width: 1000px; /* Opcional: para que no se haga excesivamente ancho */
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+
+transition: all 0.3s ease;
+}
+
+
+.album-privado-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.album-privado-info p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.album-privado-info a {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: var(--color-texto);
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: var(--radio-borde);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.album-privado-info a:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+/* Encabezado Fotos del Álbum */
+.fotos-del-album-titulo {
+  font-size: 1.5rem;
+  margin: 30px auto 10px 50px;
+  color: var(--color-texto);
+}
+
+/* Estilo uniforme para las fotos */
+/* Estilo uniforme para las fotos */
+.fotos-lista {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+gap: 20px;
+padding: 30px;
+justify-items: center;
+}
+.foto-item {
+background-color: #ffffffcc;
+border: 1px solid var(--color-hover-secundario);
+border-radius: var(--radio-borde);
+padding: 10px;
+width: 100%;
+max-width: 320px; /* Más ancho que antes */
+text-align: center;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: transform 0.3s ease;
+
+transition: all 0.3s ease;
+}
+
+
+.foto-item:hover {
+  transform: scale(1.02);
+
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.foto-item img {
+  width: 100%;
+  max-height: 500px;  /* Más alto que antes */
+  height: 450px;
+  object-fit: cover; /* Recorta para que mantenga la forma vertical */
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+ Estilos para Detalle de Foto
+ Archivo original: detalle_foto.php
+===================================================== */
+
+.detalle-foto-main {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detalle-foto-cabecera {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.boton-ver-album {
+  background-color: var(--color-secundario);
+  border: var(--borde-boton) solid var(--color-hover-secundario);
+  border-radius: var(--radio-borde);
+  padding: 10px 15px;
+  color: var(--color-texto);
+  font-size: var(--font-size-normal);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-ver-album:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+.detalle-foto-recuadro {
+  background-color: white;
+  padding: 30px;
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+}
+
+.foto-detalle-grande {
+width: 100%;
+max-width: 600px;
+max-height: 600px; /* Limita también la altura */
+object-fit: contain;
+border-radius: 8px;
+transition: all 0.3s ease;
+}
+
+/* =====================================================
+ Estilos para Perfil
+ Archivo original: perfil.php
+===================================================== */
+
+.perfil-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+transition: all 0.3s ease;
+}
+
+.perfil-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perfil-header h2 {
+  font-size: 2rem;
+  color: var(--color-texto);
+}
+
+.perfil-datos {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.perfil-datos p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.perfil-opciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.perfil-opciones a {
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: 8px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--color-texto);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.perfil-opciones a:hover {
+  background-color: var(--color-hover-secundario);
+  transform: translateY(-3px);
+}
+
+.perfil-opciones i {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.anadir-foto-contenedor {
+background-color: rgba(255, 255, 255, 0.8);
+border-radius: var(--radio-borde);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+max-width: 650px;
+margin: 60px auto;
+padding: 40px 30px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+text-align: center;
+
+transition: all 0.3s ease;
+}
+
+.anadir-foto-contenedor h2 {
+font-size: 1.8rem;
+color: var(--color-texto);
+margin-bottom: 10px;
+}
+
+.anadir-foto-contenedor p {
+font-weight: bold;
+color: var(--color-texto);
+margin-top: 10px;
+}
+
+.anadir-foto-contenedor .album-preseleccionado {
+background-color: #fdf1e1;
+border: 1px dashed var(--color-terciario);
+padding: 10px 15px;
+border-radius: 12px;
+font-size: 1rem;
+margin-bottom: 10px;
+display: inline-block;
+}
+
+.anadir-foto-contenedor form {
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.anadir-foto-contenedor label {
+font-weight: bold;
+color: var(--color-texto);
+margin-bottom: 5px;
+}
+
+.anadir-foto-contenedor select,
+.anadir-foto-contenedor input[type="file"] {
+padding: 10px;
+font-size: var(--font-size-normal);
+border: 1px solid var(--color-hover-secundario);
+border-radius: var(--radio-borde);
+background-color: #fff5f5;
+transition: border-color 0.3s ease;
+}
+
+.anadir-foto-contenedor select:focus,
+.anadir-foto-contenedor input[type="file"]:focus {
+outline: none;
+border-color: var(--color-terciario);
+}
+
+/* Oculta input real de imagen */
+.input-file {
+display: none;
+}
+
+.custom-file-upload {
+background-color: var(--color-secundario);
+border: var(--borde-boton) solid var(--color-hover-secundario);
+border-radius: var(--radio-borde);
+color: var(--color-texto);
+cursor: pointer;
+font-size: var(--font-size-normal);
+padding: 10px 20px;
+display: inline-block;
+transition: background-color 0.3s ease;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+text-align: center;
+}
+
+.custom-file-upload:hover {
+background-color: var(--color-hover-secundario);
+}
+
+.anadir-foto-contenedor button {
+align-self: center;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+  padding: 50px 20px; /* Más padding superior y lateral */
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: #fff7f2;
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: 15px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 650px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  color: var(--color-texto);
+  font-size: var(--font-size-normal);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  text-align: justify;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  text-align: center;
+  color: var(--color-primario);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+#cerrar-modal {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--color-texto);
+}
+
+#cerrar-modal:hover {
+  color: var(--color-primario);
+}
+
+#no-mostrar-mas {
+  margin: 30px auto 0;
+  display: block;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#no-mostrar-mas:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+/* =====================================================
+ Estilos para Inicio de Sesión
+ Archivo original: inicio-sesion.php
+===================================================== */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 40px 20px;
+  background-color: transparent;
+}
+
+.login-container h2 {
+  font-size: 1.8rem;
+  color: var(--color-texto);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.formulario-inicio-sesion {
+  background-color: #fff7f2;
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: var(--radio-borde);
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+transition: all 0.3s ease;
+}
+
+.formulario-inicio-sesion label {
+  font-weight: bold;
+  color: var(--color-texto);
+  margin-bottom: 5px;
+}
+
+.formulario-inicio-sesion input[type="text"],
+.formulario-inicio-sesion input[type="password"] {
+  padding: 12px;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-hover-secundario);
+  font-size: var(--font-size-normal);
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.formulario-inicio-sesion input:focus {
+  outline: none;
+  border-color: var(--color-terciario);
+}
+
+.recordarme-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--font-size-pequeno);
+  color: var(--color-texto);
+}
+
+.recordarme-container input[type="checkbox"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.btn-iniciar-sesion {
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: var(--font-size-normal);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+
+.btn-iniciar-sesion:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+.error {
+  color: rgba(248, 48, 48, 0.83);
+  font-size: var(--font-size-pequeno);
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* =====================================================
+ Estilos para Registro de Usuario
+ Archivo original: registro.php
+===================================================== */
+
+.registro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 40px 20px;
+}
+
+.registro-container h2 {
+  font-size: 1.8rem;
+  color: var(--color-texto);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.registro-container form {
+  background-color: #fff7f2;
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: var(--radio-borde);
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registro-container form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.registro-container label {
+  font-weight: bold;
+  color: var(--color-texto);
+  margin-bottom: 5px;
+}
+
+.registro-container input[type="text"],
+.registro-container input[type="password"] {
+  padding: 12px;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-hover-secundario);
+  font-size: var(--font-size-normal);
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.registro-container input:focus {
+  outline: none;
+  border-color: var(--color-terciario);
+}
+
+.registro-container .error {
+  color: rgba(248, 48, 48, 0.83);
+  font-size: var(--font-size-pequeno);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.registro-container button {
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-hover-secundario);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  align-self: center;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.registro-container button:hover {
+  background-color: var(--color-hover-secundario);
+}
+.mensaje-exito {
+background-color: #d4edda;
+border: 1px solid #c3e6cb;
+color: #155724;
+padding: 12px 18px;
+border-radius: 6px;
+text-align: center;
+font-weight: bold;
+margin-bottom: 20px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.contenedor-volver {
+margin: 10px 20px;
+}
+
+.contenedor-volver {
+margin: 10px 20px;
+}
+
+.boton-volver {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 16px;
+background-color: #ffffff;
+color: #333;
+border: 2px solid #ccc;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s;
+}
+
+.boton-volver i {
+font-size: 1rem;
+}
+
+.boton-volver:hover {
+background-color: #e0e0e0;
+color: #000;
+}
+
+
+
+.navegacion-fotos {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin: 20px 0;
+}
+
+.boton-navegacion {
+padding: 10px 20px;
+background-color: #fff;
+border: 2px solid #ccc;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+color: #333;
+transition: background-color 0.3s;
+}
+
+.boton-navegacion:hover {
+background-color: #eee;
+}
+
+.detalle-foto-contenedor.lateral-nav {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 30px;
+position: relative;
+}
+
+.sin-album {
+display: inline-block;
+padding: 10px 20px;
+background-color: #ffe9e9;
+color: #c0392b;
+font-weight: bold;
+border: 2px dashed #e74c3c;
+border-radius: 10px;
+font-size: 1rem;
+margin: 15px auto;
+text-align: center;
+box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+max-width: 400px;
+}
+
+
+.boton-navegacion.lateral {
+font-size: 1.8rem;
+background: none;
+border: none;
+color: #333;
+cursor: pointer;
+text-decoration: none;
+padding: 10px;
+transition: color 0.3s ease;
+}
+
+.boton-navegacion.lateral:hover {
+color: #000;
+}
+
+
+
+.album-navegacion-lateral {
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+margin: 20px auto;
+max-width: 1000px; /* Igual que el recuadro blanco */
+}
+
+
+
+
+.boton-album-lateral:hover {
+background-color: #eee;
+}
+
+
+
+
+.boton-limpiar {
+margin-top: 8px;
+background-color: #e74c3c;
+border: none;
+color: white;
+padding: 8px 14px;
+font-size: 0.9rem;
+border-radius: var(--radio-borde);
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.boton-limpiar:hover {
+background-color: #c0392b;
+}
+
+
+/* ====================== MEDIA QUERIES ======================= */
+
+/* 📱 Teléfonos pequeños (hasta 480px) */
+@media (max-width: 480px) {
+.fotos-lista,
+.galeria-principal,
+.lista-albumes,
+.perfil-opciones {
+  grid-template-columns: 1fr !important;
+}
+
+.formulario-registro,
+.formulario-inicio-sesion,
+.registro-container form,
+.crear-album-contenedor,
+.anadir-foto-contenedor {
+  width: 90% !important;
+  padding: 15px !important;
+
+transition: all 0.3s ease;
+}
+
+header h1, header h3, header p {
+  font-size: 1rem;
+  padding: 6px 12px;
+}
+
+header {
+  padding: 10px;
+}
+
+footer p,
+.contacto-footer {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+}
+
+.foto-detalle-grande {
+  max-width: 100%;
+  height: auto;
+}
+}
+
+/* 📱 Teléfonos grandes / Tablets pequeñas (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+.fotos-lista,
+.galeria-principal,
+.lista-albumes,
+.perfil-opciones {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.formulario-registro,
+.formulario-inicio-sesion,
+.registro-container form {
+  width: 80%;
+}
+
+header h1, header h3, header p {
+  font-size: 1.2rem;
+}
+
+.detalle-foto-contenedor {
+  flex-direction: column;
+}
+}
+
+/* 💻 Tablets grandes y ordenadores pequeños (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+.fotos-lista,
+.galeria-principal,
+.lista-albumes {
+  grid-template-columns: repeat(3, 1fr);
+}
+}
+
+
+
+
+
+/* Ajuste visual para detalle de foto en móviles y escritorio */
+
+.detalle-foto-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.foto-detalle-grande {
+  width: 100%;
+  max-height: 500px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .detalle-foto-contenedor {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    max-width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .foto-detalle-grande {
+    width: 100vw;               /* 💪 toda la pantalla de ancho */
+    height: auto;
+    max-height: 85vh;           /* 📏 hasta el 85% de la altura visible */
+    object-fit: contain;        /* 📷 mantener proporciones */
+    display: block;
+    margin: 0 auto;
+    border-radius: 0;           /* opcional: quitar bordes redondeados para más impacto */
+  }
+}
+
+
+
+
+
+/* ============================
+   ✅ NAVEGACIÓN ÁLBUM RESPONSIVE
+============================ */
+
+/* Estilo general */
+.boton-album-lateral {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo en escritorio */
+@media (min-width: 769px) {
+  .album-navegacion-lateral {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+  }
+
+  .boton-album-lateral {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .boton-album-lateral.anterior {
+    left: -160px;
+  }
+
+  .boton-album-lateral.siguiente {
+    right: -160px;
+  }
+}
+
+/* Estilo en móviles */
+@media (max-width: 768px) {
+  .album-navegacion-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    position: static;
+  }
+
+  .boton-album-lateral {
+    position: static !important;
+    transform: none !important;
+    width: 90%;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+/* 🎨 Estilo general para botones de paginación */
+.btn-anterior, .btn-siguiente {
+    display: inline-block;
+    background-color: var(--boton-bg, #007bff);
+    color: var(--boton-color, #fff);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6em 1.2em;
+    margin: 1em 0.5em;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-anterior:hover,
+.btn-siguiente:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-anterior:active,
+.btn-siguiente:active {
+    transform: translateY(1px);
+    background-color: #004494;
+}
+
+.btn-anterior:focus,
+.btn-siguiente:focus {
+    outline: 3px solid #ffaa00;
+}
+
+/* 🌞 Modo claro por defecto */
+@media (prefers-color-scheme: light) {
+    :root {
+        --boton-bg: #007bff;
+        --boton-color: #ffffff;
+    }
+}
+
+/* 🌙 Modo oscuro automático */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --boton-bg: #1a73e8;
+        --boton-color: #e0e0e0;
+    }
+}
+
+/* 📱 Mobile (hasta 480px) */
+@media (max-width: 480px) {
+    .btn-anterior, .btn-siguiente {
+        padding: 0.5em 1em;
+        font-size: 0.9rem;
+        display: block;
+        width: 90%;
+        margin: 0.5em auto;
+        text-align: center;
+    }
+}
+
+/* 📱 Tablet (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .btn-anterior, .btn-siguiente {
+        padding: 0.6em 1.2em;
+        font-size: 1rem;
+    }
+}
+
+/* 💻 Laptop (769px a 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .btn-anterior, .btn-siguiente {
+        padding: 0.7em 1.5em;
+        font-size: 1.1rem;
+    }
+}
+
+/* 🖥️ Desktop (> 1200px) */
+@media (min-width: 1201px) {
+    .btn-anterior, .btn-siguiente {
+        padding: 0.8em 2em;
+        font-size: 1.2rem;
+    }
+}
