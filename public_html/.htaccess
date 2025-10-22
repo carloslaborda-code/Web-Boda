@@ -1,0 +1,84 @@
+#########################################
+## 🔧 CONFIGURACIÓN INICIAL
+#########################################
+
+DirectoryIndex index.html index.php index.htm
+Options -Indexes
+
+#########################################
+## 🔒 CABECERAS HTTP FORZADAS (SI mod_headers ESTÁ ACTIVO)
+#########################################
+
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)"
+Header always set Cross-Origin-Resource-Policy "same-site"
+Header always set Cross-Origin-Embedder-Policy "require-corp"
+Header always set Cross-Origin-Opener-Policy "same-origin"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+Header edit Set-Cookie ^(.*)$ $1; HttpOnly; Secure; SameSite=Strict
+
+#########################################
+## 🧱 BLOQUEO DE ARCHIVOS SENSIBLES
+#########################################
+
+<FilesMatch "^(\.env|\.git|\.htaccess|\.htpasswd|config\.php|phpinfo\.php)$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(ini|log|sql|sh|bak|conf|md|inc|old|backup|swp)$">
+  Require all denied
+</FilesMatch>
+
+<Files "db.php">
+  Require all denied
+</Files>
+
+# Refuerzo alternativo con RewriteRule
+RewriteRule ^(\.env|config\.php)$ - [F,L]
+
+#########################################
+## 🚫 BLOQUEO DE MÉTODOS HTTP INSEGUROS
+#########################################
+
+<LimitExcept GET POST HEAD>
+  Require all denied
+</LimitExcept>
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_METHOD} ^(TRACE|DELETE|OPTIONS|PUT) [NC]
+RewriteRule .* - [F,L]
+
+#########################################
+## 🔁 REDIRECCIÓN FORZADA A HTTPS
+#########################################
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#########################################
+## ⚙️ MVC / REESCRITURA DE RUTAS
+#########################################
+
+RewriteCond %{REQUEST_URI} !^/(js|css|image|fonts|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+#########################################
+## 🖼️ BLOQUEO DE HOTLINKING DE IMÁGENES
+#########################################
+
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?bodamartayluis\.es/ [NC]
+RewriteRule \.(jpg|jpeg|png|gif|bmp|webp)$ - [F,NC,L]
+
+#########################################
+## 🧬 BLOQUEO DE INYECCIONES EN QUERY STRING
+#########################################
+
+RewriteCond %{QUERY_STRING} (\.\.\/|%2e%2e%2f|<|>|%3c|%3e|select|union|insert|cast|drop|delete|update) [NC]
+RewriteRule .* - [F,L]
